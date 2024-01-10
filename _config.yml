@@ -1,0 +1,82 @@
+# encoding: utf-8
+title: guileschool 블로그
+email: guileschool@gmail.com
+description: |
+  To Make Your Life Easier
+  가일스쿨은 당신의 삶을 쉽게 만들어 줍니다
+baseurl: ''
+url: 'http://guileschool.com'
+timezone: Asia/Seoul 
+encoding: utf-8
+
+show_drafts: true
+
+repository: guileschool/guileschool.github.io
+
+permalink: /:year/:month/:day/:title/
+
+excerpt_separator: <!--more-->
+
+markdown: kramdown
+
+krandown:
+  input: GFM
+  highlighter: rouge
+
+plugins:
+  - jekyll-google_cse
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  
+paginate: 5
+paginate_path: '/page/:num/'
+
+collections:
+  authors:
+    output: true
+    permalink: /authors/:path/
+  tags:
+    output: true
+    permalink: /tags/:path/
+
+defaults:
+  - scope:
+      path: ''
+      type: authors
+    values:
+      layout: author
+  - scope:
+      path: ''
+      type: tags
+    values:
+      layout: tag
+
+exclude: [README.md, Gemfile, Gemfile.lock, Guardfile]
+
+keep_files: [assets, files]
+github: [metadata]
+# iolo's custom
+author: guileschool@gmail.com
+image: '/assets/images/default_blog_cover.jpg'
+asset_url: /assets
+#asset_url: //meta-kage.kakaocdn.net/dn/osa/blog/assets
+#asset_url: //t1.daumcdn.net/osa/blog/assets
+google_analytics:
+  ua: 'UA-61814681-1'
+google_cse_id: 012666540490889831939:evw0ex738ka # Use your search engine ID
+
+facebook:
+  app_id: '1204347326263000'
+  username: guileschool
+twitter:
+  username: guileschool
+google_plus:
+  username: guileschool
+github_url:
+  username: guileschool
+
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+disqus: guileschool
+

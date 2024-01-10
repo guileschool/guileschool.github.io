@@ -1,0 +1,12 @@
+.DS_Store
+nohup.out
+log
+_site
+_drafts
+.sass-cache
+.jekyll-metadata
+.ruby-version
+appcast.xml
+Paddles
+
+.DS_Store

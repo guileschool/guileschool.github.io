@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include head.html %}
+</head>
+<script id="dsq-count-scr" src="//guileschool.disqus.com/count.js" async></script>
+<body class="{{ page.layout | append: '-template' }}">
+
+{% include header.html %}
+<div id="wrapper">
+    {{ content }}
+    <div class="clearfix"></div>
+
+    <a href="#" id="back-to-top"></a>
+</div>
+
+{% include footer.html %}
+
+<script src="{{ site.asset_url }}/lib/jquery-1.12.0.min.js"></script>
+<script src="{{ site.asset_url }}/lib/jquery.magnific-popup.min.js"></script>
+<script src="{{ site.asset_url }}/js/index.js"></script>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+<!-- 여기서 부터 syntaxhighter3 용 추가 -->
+<!-- Include required JS files -->
+<script type="text/javascript" src="{{ site.asset_url }}/js/syntaxhighlighter3/shCore.js"></script>
+ 
+<!--
+    At least one brush, here we choose JS. You need to include a brush for every
+    language you want to highlight
+-->
+<script type="text/javascript" src="{{ site.asset_url }}/js/syntaxhighlighter3/shBrushJScript.js"></script>
+<script type="text/javascript" src="{{ site.asset_url }}/js/syntaxhighlighter3/shBrushBash.js"></script>
+<script type="text/javascript" src="{{ site.asset_url }}/js/syntaxhighlighter3/shBrushAppleScript.js"></script>
+<script type="text/javascript" src="{{ site.asset_url }}/js/syntaxhighlighter3/shBrushCpp.js"></script>
+<script type="text/javascript" src="{{ site.asset_url }}/js/syntaxhighlighter3/shBrushCSharp.js"></script>
+<script type="text/javascript" src="{{ site.asset_url }}/js/syntaxhighlighter3/shBrushCss.js"></script>
+<script type="text/javascript" src="{{ site.asset_url }}/js/syntaxhighlighter3/shBrushJava.js"></script>
+<script type="text/javascript" src="{{ site.asset_url }}/js/syntaxhighlighter3/shBrushPerl.js"></script>
+<script type="text/javascript" src="{{ site.asset_url }}/js/syntaxhighlighter3/shBrushPhp.js"></script>
+<script type="text/javascript" src="{{ site.asset_url }}/js/syntaxhighlighter3/shBrushPython.js"></script>
+ 
+<!-- Include *at least* the core style and default theme -->
+<link href="{{ site.asset_url }}/css/syntaxhighlighter3/shCore.css" rel="stylesheet" type="text/css" />
+<link href="{{ site.asset_url }}/css/syntaxhighlighter3/shThemeDefault.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+     SyntaxHighlighter.all()
+</script>
+<!-- 여기까지 syntaxhighlighter3 -->
+
+{% if site.google_analytics %}
+{% include google_analytics.html %}
+{% endif %}
+
+{% if page.layout != 'home' %}
+    {% include kakaotalk_link.html %}
+    {% include kakaostory_sdk.html %}
+
+    {% if site.facebook %}
+    {% include facebook_sdk.html %}
+    {% endif %}
+
+    {% if site.twitter %}
+    {% include twitter_sdk.html %}
+    {% endif %}
+
+    {% if site.google_plus %}
+    {% include google_plus_sdk.html %}
+    {% endif %}
+{% endif %}
+</body>
+</html>

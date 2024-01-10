@@ -1,0 +1,43 @@
+<div id="header">
+    <button id="menu-toggle" type="button">
+        <span class="sr-only">Toggle Navigation Menu</span>
+    </button>
+    <button id="search-toggle" type="button">
+        <span class="sr-only">Toggle Search Form</span>
+    </button>
+    <a id="logo" href="/">
+        <span class="sr-only">KakaoTech</span>
+    </a>
+    <form action="http://www.google.com/cse" id="search" align="right">
+        <input type="hidden" name="cx" value='{{ site.google_cse_id }}' />
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="text" id="searchQueryEdit" name="q" placeholder="Search..." value="" size="10" />
+    </form>
+    <ul id="menu" class="nav">
+        <li class="{% if page.url != '/opensource/' and page.url != '/openapi/' and page.url != '/events/' %} active {% endif %}"><a href="{{ base_path }}/">블로그</a></li>
+        <li class="{% if page.url == '/authors/mac.automator' %} active {% endif %}"><a href="{{ base_path }}/authors/mac.automator/">맥오토메이터</a></li>
+        <li class="{% if page.url == '/authors/beaglebone' %} active {% endif %}"><a href="{{ base_path }}/authors/beaglebone/">비글본블랙</a></li>
+        <li class="{% if page.url == '/authors/arduino' %} active {% endif %}"><a href="{{ base_path }}/authors/arduino/">아두이노</a></li>
+        <li class="{% if page.url == '/authors/chatgpt' %} active {% endif %}"><a href="{{ base_path }}/authors/chatgpt/">chatGPT</a></li>
+        <li class="{% if page.url == '/authors/freertos' %} active {% endif %}"><a href="{{ base_path }}/authors/freertos/">FreeRTOS</a></li>
+        <li class="{% if page.url == '/2017/06/01/BBB-handbook/' %} active {% endif %}"><a href="{{ base_path }}/2017/06/01/BBB-handbook/">매뉴얼</a></li>
+        <li class="{% if page.url == '/notices/' %} active {% endif %}"><a href="{{ base_path }}/notices/">알림</a></li>
+    </ul>
+</div>
+
+<!-- Script pointing to jekyll-search.js -->
+<script src="{{site.baseurl}}/dest/jekyll-search.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '{{ site.baseurl }}/search2.json',
+        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+        noResultsText: '<li>No results found</li>',
+        limit: 15,
+        fuzzy: false,
+        exclude: ['Welcome']
+    })
+</script><!-- #header -->
+
